@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    height: 120vh;
+    background-color: rgba(66, 41, 41, 0.932);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr 100px;
+    grid-template-columns: 100px 1fr 30%;
+
+    grid-template-areas:
+        "header header header"
+        "main main aside"
+        "footer footer footer";
+
+    height: 100%;
+    color: white;
+    font-family: Arial, Verdana, Tahoma;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.header {
+    display: flex;
+    background-color: black;
+    grid-area: header;
+    padding: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main {
+    display: flex;
+    background-color: rgb(94, 64, 64);
+    grid-area: main;
+    justify-content: center;
+    padding-top: 50px;
+
+}
+
+.footer {
+    display: flex;
+    background-color: black;
+    grid-area: footer;
+    justify-content: center;
+    align-items: center;
+}
+
+.aside {
+    display: flex; 
+    padding-top: 30px; 
+    padding-left: 10px;  
+    height: 500px;
+    grid-area: aside;
+    flex-wrap: wrap;
+    color: rgba(255, 255, 255, 0.192);
+    font-family: Arial, Verdana, Tahoma;
+    font-size: 25px;
+
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.401);
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center; /* Zentriert die "1" horizontal */
+    align-items: center;     /* Zentriert die "1" vertikal */
+    position: relative;      /* WICHTIG: Erlaubt absolute Positionierung darin */
+    color: white;            /* Nur zur besseren Sichtbarkeit */
+}
+
+.content:hover{
+    background-color: rgba(0, 0, 0, 0.664);
+}
+
+
+.andereFont {
+    font-family: "Brush Script MT", "Brush Script Std", cursive;
+    font-size: 50px;
+    padding-left: 40px;
+}
+
+.wort {
+    letter-spacing: 7px;
+    color: rgb(111, 67, 67);
+    font-size: 20px;
+}
+
+.text {
+    font-family: monospace;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-size: medium;
+    color: rgba(255, 255, 255, 0.308);
+}
+
+sup {
+    font-size: 18px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    width: 450px;
+    height: 450px;
+    margin: 20px auto;
+}
+
+.feld {
+    display: grid;
+    /* Erzeugt das 3x3 Muster der kleinen Zellen innerhalb eines Blocks */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    border: 1px solid rgba(0, 0, 0, 0);
+    /* Die dicken Linien zwischen den 3x3 Blöcken */
+}
+
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: var(--border-thin);
+    /* Die dünnen Linien zwischen den Zahlen */
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.493);
+    border: 1px solid rgba(0, 0, 0, 0.137);
+
+}
+
+.cell:hover {
+    background-color: rgba(0, 0, 0, 0.223);
+}
+
+.eins, .zwei, .drei, .vier, .fünf, .sechs, .sieben, .acht, .neun {
+    font-size: 12px;
+    position: absolute;     
+    top: 5px;               
+    right: 5px;    
+    color: rgba(255, 255, 255, 0.199);         
+}
+
+.error {
+    color: #ff4d4d !important;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+#neu{
+    font-size: 30px;
+}
